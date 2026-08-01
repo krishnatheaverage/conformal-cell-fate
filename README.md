@@ -7,7 +7,7 @@ and the wider Aristotle ecosystem) something it currently lacks: a prediction th
 finite-sample, distribution-free guarantee, instead of a point estimate or a model-internal
 posterior that is known to be miscalibrated.
 
-Author: Krishna Harish (rising HS senior, independent researcher; recent work on conformal
+Authors: Krishna Harish (high school researchers; recent work on conformal
 prediction and calibration). Looking for a mentor in the single-cell / spatial genomics space to
 co-develop and co-author this. Target: a machine-learning-for-biology workshop at NeurIPS 2026
 (LMRL / AI4Science), papers due this fall.
