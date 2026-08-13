@@ -5,3 +5,4 @@ data/*.txt
 data/*.json
 data/*.npy
 __pycache__/
+email-to-nianping-*.md
