@@ -1,0 +1,7 @@
+.venv/
+data/*.gz
+data/*.npz
+data/*.txt
+data/*.json
+data/*.npy
+__pycache__/

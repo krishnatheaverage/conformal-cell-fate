@@ -1,0 +1,47 @@
+== coverage vs k* (knn, >=5 sisters) ==
+       method  kstar        m       lo       hi           lab
+conformal-APS      1 0.948855 0.940027 0.957683 k*=1\n(n=110)
+conformal-APS      2 0.909400 0.898724 0.920077 k*=2\n(n=161)
+conformal-APS      3 0.861086 0.845855 0.876317  k*=3\n(n=36)
+conformal-THR      1 0.937606 0.927966 0.947245 k*=1\n(n=110)
+conformal-THR      2 0.907066 0.896118 0.918014 k*=2\n(n=161)
+conformal-THR      3 0.884500 0.871963 0.897036  k*=3\n(n=36)
+    posterior      1 0.937656 0.929532 0.945780 k*=1\n(n=110)
+    posterior      2 0.895885 0.890233 0.901537 k*=2\n(n=161)
+    posterior      3 0.851406 0.842141 0.860671  k*=3\n(n=36)
+
+== set size vs k* ==
+       method  kstar        m       lo       hi
+conformal-APS      1 3.299627 3.222839 3.376415
+conformal-APS      2 3.221669 3.150228 3.293110
+conformal-APS      3 3.383846 3.308922 3.458769
+conformal-THR      1 3.240778 3.166959 3.314597
+conformal-THR      2 3.219817 3.138693 3.300941
+conformal-THR      3 3.382807 3.313760 3.451854
+    posterior      1 3.130106 3.097171 3.163040
+    posterior      2 3.027278 3.008639 3.045916
+    posterior      3 3.245644 3.207079 3.284208
+
+== per fate ==
+       method         top_fate        m       lo       hi                       lab
+    posterior Undifferentiated 0.951648 0.949024 0.954271 Undifferentiated\n(n=143)
+conformal-THR Undifferentiated 0.956168 0.951943 0.960393 Undifferentiated\n(n=143)
+conformal-APS Undifferentiated 0.952236 0.947696 0.956777 Undifferentiated\n(n=143)
+    posterior         Monocyte 0.979979 0.975801 0.984158          Monocyte\n(n=66)
+conformal-APS         Monocyte 0.980732 0.976308 0.985156          Monocyte\n(n=66)
+conformal-THR         Monocyte 0.987805 0.983880 0.991730          Monocyte\n(n=66)
+conformal-APS       Neutrophil 0.930518 0.915427 0.945608        Neutrophil\n(n=51)
+conformal-THR       Neutrophil 0.957292 0.948497 0.966087        Neutrophil\n(n=51)
+    posterior       Neutrophil 0.916193 0.906583 0.925803        Neutrophil\n(n=51)
+    posterior             Baso 0.664535 0.637294 0.691775              Baso\n(n=29)
+conformal-APS             Baso 0.756743 0.720463 0.793023              Baso\n(n=29)
+conformal-THR             Baso 0.673803 0.634630 0.712977              Baso\n(n=29)
+conformal-APS             Mast 0.472253 0.405141 0.539364               Mast\n(n=7)
+    posterior             Mast 0.407715 0.352898 0.462533               Mast\n(n=7)
+conformal-THR             Mast 0.432074 0.370532 0.493617               Mast\n(n=7)
+conformal-APS              Meg 0.933150 0.873764 0.992537                Meg\n(n=5)
+    posterior              Meg 0.955128 0.911390 0.998866                Meg\n(n=5)
+conformal-THR              Meg 0.860348 0.786274 0.934422                Meg\n(n=5)
+conformal-THR              Eos 0.440998 0.404692 0.477305                Eos\n(n=3)
+    posterior              Eos 0.430704 0.395524 0.465885                Eos\n(n=3)
+conformal-APS              Eos 0.435116 0.399471 0.470761                Eos\n(n=3)
