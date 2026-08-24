@@ -7,10 +7,11 @@ and the wider Aristotle ecosystem) something it currently lacks: a prediction th
 finite-sample, distribution-free guarantee, instead of a point estimate or a model-internal
 posterior that is known to be miscalibrated.
 
-Authors: Krishna Harish (high school researchers; recent work on conformal
-prediction and calibration). Looking for a mentor in the single-cell / spatial genomics space to
-co-develop and co-author this. Target: a machine-learning-for-biology workshop at NeurIPS 2026
-(LMRL / AI4Science), papers due this fall.
+Authors: Krishna Harish and Nianping Liu (Stanford). Target: ICBINB-BIO at
+NeurIPS 2026.
+
+Phase-0 has been run. The headline below is the original proposal; what the data actually said is
+in [RESULTS.md](RESULTS.md), and it is not what we expected. Read that first.
 
 ---
 
@@ -70,6 +71,8 @@ Everything below is buildable on public data with the lab's own tools.
    hematopoiesis). Fit the vector field with Dynamo.
 2. Split-conformal calibration of fate sets. Show empirical coverage lands at 1 - alpha across
    alpha, while the Bayesian posterior "confidence" undercovers (report the miscoverage gap).
+   **This step was run and the second half is refuted: the posteriors overcover (0.952 marginal),
+   they do not undercover. See RESULTS.md.**
 3. Show set size tracks biology: sets blow up at branch points and shrink along committed lineages.
 4. Stretch: one in-silico perturbation ranked by conformal effect vs. by point effect, and one
    cross-species coverage number.
@@ -78,6 +81,17 @@ Step 2 alone is a clean, honest, self-contained result and the backbone of a wor
 
 ## Status
 
-Proposal stage. Looking for a mentor / co-author with domain grounding in single-cell dynamics,
-spatial genomics, or evo-devo to sharpen the biology and co-run phase-0. Method side (conformal
-prediction, calibration, coverage diagnostics) I bring.
+Phase-0 complete on LARRY in vitro (Weinreb 2020), scDiffEq split. 1,408 clones after the one-well
+filter. The result is a negative one and it is not the one we proposed:
+
+- The Bayesian posteriors do not undercover. They overcover, at 0.952 marginal, with sets about 25%
+  larger than needed. Split conformal reaches 0.907 with smaller sets.
+- What does fail is conditional: coverage decays monotonically in k*, the smallest number of fates
+  whose observed clonal mass reaches 1 - alpha. At >=3 sisters, k*=1 gets 0.966 and k*=2 gets 0.858.
+  The same decay shows up under a kNN fate-propagation predictor, so it is not an artifact of one
+  model.
+- It cannot be repaired by grouping. Predicting k*>=2 from the day-2 transcriptome runs at AUC
+  0.594, and Mondrian conformal on the predicted group moves k*=2 coverage only 0.854 -> 0.867.
+
+Numbers, tables, and caveats in [RESULTS.md](RESULTS.md). Scripts run in order, `scripts/01` to
+`scripts/06`.
